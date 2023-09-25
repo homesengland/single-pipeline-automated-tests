@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TestFrameworkCore</RootNamespace>
+    <Description>test</Description>
+    <Copyright>2020</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>test framework base</PackageTags>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Remove="Features\US4521 Data Migration Dry Run.feature" />
+    <SpecFlowFeatureFiles Remove="Features\US5037 Views %28Task%29.feature" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4521 Data Migration Dry Run.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\US5037 Views (Task).feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
+    <PackageReference Include="gherkin" Version="26.0.3" />
+    <PackageReference Include="He.TestFramework.TestBase.Web" Version="1.0.46" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Selenium.Axe" Version="4.0.13" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.27.0" />
+    <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
+    <PackageReference Include="Selenium.Support" Version="4.12.4" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.12.4" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="116.0.5845.9600" />
+    <PackageReference Include="Selenium.WebDriver.MSEdgeDriver" Version="115.0.1901.200" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="TestRun.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestRun.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestRun.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>TestRun.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+	
+	<!--Added below for using app.config with dot net core-->
+	<!--___________________________________________________-->
+	
+  <Target Name="CopyCustomContent" AfterTargets="AfterBuild"> 
+	<Copy SourceFiles="app.config" DestinationFiles="$(OutDir)\testhost.dll.config" /> 
+  </Target>
+
+</Project>
