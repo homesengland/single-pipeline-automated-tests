@@ -54,8 +54,8 @@ steps:
     testFiltercriteria: 'TestCategory=$(testFilter)'
     vsTestVersion: toolsInstaller
     rerunFailedTests: true
-    rerunFailedThreshold: '80'
-    rerunMaxAttempts: '1'
+    rerunFailedThreshold: '10'
+    rerunMaxAttempts: '2'
 
 
 - task: PublishPipelineArtifact@1
