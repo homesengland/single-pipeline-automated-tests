@@ -2,6 +2,7 @@
         Feature to test the functionality of the project
 
 
+    @Regression
     Scenario: Test 1 Providing Mandatory Fields for the Prospect stage Project
     Given I navigate to the url
     Then  the login page should be displayed
