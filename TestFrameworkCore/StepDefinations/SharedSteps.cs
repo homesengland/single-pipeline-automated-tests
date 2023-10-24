@@ -25,47 +25,42 @@ namespace TestFrameworkCore.StepDefinations
         {
             BasePage basePage = new BasePage(StaticObjectRepo.Driver, sContext);
             basePage.GoToURL();
-            PageObjectRepo.superCalculatorPage = new SuperCalculatorPage(StaticObjectRepo.Driver, sContext);
+            PageObjectRepo.loginPage = new LoginPage(StaticObjectRepo.Driver, sContext);
         }
 
-        [Then(@"the page '(.*)' is displayed")]
-        public void ThenThePageIsDisplayed(string title)
+        [Then(@"the login page should be displayed")]
+        public void ThenTheLoginPageShouldBeDisplayed()
         {
-            if (title.ToLower().Equals("opportunities"))
-            {
-                opportunityPage.WaitForPageToLoad();
-                opportunityPage.ValidateTitle(title);
-            }
-            else if (title.ToLower().Equals("contacts"))
-            {
-                contactsPage.WaitForPageToLoad();
-                contactsPage.ValidateTitle(title);
-            }
-            else
-            {
-                throw new NotFoundException(title + " title not found!!");
-            }
+            loginPage.ValidateHeader();
         }
 
 
-        [Then(@"I validate the Page title and columns displayed on '(.*)' page")]
-        public void ThenIValidateThePageTitleAndColumnsDisplayedOnPage(string tab)
+        [When(@"I login as '([^']*)' to the application")]
+        public void WhenILoginAsToTheApplication(string role)
         {
-            if (tab.ToLower().Equals("opportunities"))
-            {
-                opportunityPage.ValidateHeader();
-                opportunityPage.ValidateColumns();
-            }
-            else if (tab.ToLower().Equals("contacts"))
-            {
-                contactsPage.ValidateHeader();
-                contactsPage.ValidateColumns();
-            }
-            else
-            {
-                throw new NotFoundException(tab + " page not found!!");
-            }
+            loginPage.Login(role);
         }
+
+
+        [Then(@"I should land on the AppLanding page")]
+        public void ThenIShouldLandOnTheAppLandingPage()
+        {
+            appLandingPage.ValidateHeader();
+        }
+
+        [When(@"i click on the Single pipeline project")]
+        public void WhenIClickOnTheSinglePipelineProject()
+        {
+            appLandingPage.GotoSinglePipeline();
+        }
+
+        [Then(@"I should land on the Home page")]
+        public void ThenIShouldLandOnTheHomePage()
+        {
+            homePage.ValidateTitle();
+            homePage.CreateNewProject();
+        }
+
 
     }
 }

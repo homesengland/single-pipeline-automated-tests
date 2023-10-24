@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>TestFrameworkCore</RootNamespace>
     <Description>test</Description>
@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Sprint 1\AccessibilityTest.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4521 Data Migration Dry Run.feature.cs" />
@@ -32,9 +33,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.10.2" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.5.0" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
     <PackageReference Include="gherkin" Version="26.0.3" />
-    <PackageReference Include="He.TestFramework.TestBase.Web" Version="1.0.46" />
+    <PackageReference Include="He.TestFramework.TestBase.Web" Version="1.0.54-alpha" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
@@ -46,7 +49,7 @@
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="4.12.4" />
     <PackageReference Include="Selenium.WebDriver" Version="4.12.4" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="116.0.5845.9600" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="118.0.5993.7000" />
     <PackageReference Include="Selenium.WebDriver.MSEdgeDriver" Version="115.0.1901.200" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
@@ -55,6 +58,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\Sprint 1\Projects.feature.cs">
+      <DependentUpon>Projects.feature</DependentUpon>
+    </Compile>
     <Compile Update="TestRun.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -67,6 +73,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>TestRun.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Sprint 1\Projects.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 	
 	<!--Added below for using app.config with dot net core-->

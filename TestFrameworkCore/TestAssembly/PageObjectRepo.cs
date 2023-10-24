@@ -11,16 +11,19 @@ namespace TestFrameworkCore.TestAssembly
     public static class PageObjectRepo
     {
         [ThreadStatic]
+        public static AppLandingPage appLandingPage;
+
+        [ThreadStatic]
         public static HomePage homePage;
+        
+        [ThreadStatic]
+        public static LoginPage loginPage;
 
         [ThreadStatic]
-        public static OpportunityPage opportunityPage;
+        public static HomePage contactsPage;
 
         [ThreadStatic]
-        public static ContactsPage contactsPage;
-
-        [ThreadStatic]
-        public static DashboardPage dashboardPage;
+        public static LoginPage dashboardPage;
 
         [ThreadStatic]
         public static BasePage basePage;
