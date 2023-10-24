@@ -27,7 +27,6 @@
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Sprint 1\AccessibilityTest.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities - Copy.feature.cs" />
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4521 Data Migration Dry Run.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US5037 Views (Task).feature.cs" />
   </ItemGroup>
