@@ -73,4 +73,3 @@ steps:
     projectName: 'TestFrameworkWeb'
     testExecutionJson: 'TestFrameworkCore/**/TestExecution.json'
   condition: succeededOrFailed()
-
