@@ -18,10 +18,11 @@ namespace TestFrameworkCore.Pages
     {
         public new IWebDriver driver;
 
-        private IWebElement SinglePipelineLink => driver.FindElement(By.CssSelector("div[data-appid='hesp_SinglePipeline_published']"));
-        private By SinglePipelineBy => By.CssSelector("div[data-appid='hesp_SinglePipeline_published']");
-        private IWebElement Header => driver.FindElement(By.CssSelector("div[data-id='topBar']"));
-        private By HeaderBy => By.CssSelector("div[data-id='topBar']");
+        private IWebElement AppiFrame => driver.FindElement(By.CssSelector("#AppLandingPage"));
+        private IWebElement ManagePartnerLink => driver.FindElement(By.CssSelector("div[title=\"Manage Partner Interactions\"]"));
+        private By ManagePartnerLinkBy => By.CssSelector("div[title=\"Manage Partner Interactions\"]");
+        private IWebElement Header => driver.FindElement(By.CssSelector("div[data-id='topBar'] > div:nth-child(2) > span"));
+        private By HeaderBy => By.CssSelector("div[data-id='topBar'] > div:nth-child(2) > span");
         private readonly ScenarioContext sContext;
         public AppLandingPage(IWebDriver _driver, ScenarioContext injectedContext) : base(_driver, injectedContext)
         {
@@ -29,17 +30,17 @@ namespace TestFrameworkCore.Pages
             sContext = injectedContext;
         }
 
-        internal void GotoSinglePipeline()
+        internal void GotoManagerPartnerInteractions()
         {
-            driver.SwitchTo().Frame("AppLandingPage");
-            ClickOnElement(SinglePipelineLink);
+            driver.SwitchTo().Frame(AppiFrame);
+            ClickOnElement(ManagePartnerLink);
             homePage = new HomePage(driver, sContext);
 
         }
 
         internal void ValidateHeader()
         {
-            //WaitforFewSeconds(3);
+            WaitforFewSeconds(7);
             WaitUntilElementVisible(HeaderBy);
             Assert.IsTrue(Header.Text.Contains("SANDBOX"),"The text 'SANDBOX' not found on page! \n Home page not loaded properly!");
         }

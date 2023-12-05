@@ -4,6 +4,8 @@ using TechTalk.SpecFlow;
 using static TestFrameworkCore.TestAssembly.PageObjectRepo;
 using TestFrameworkCore.Pages;
 using TestFrameworkCore.TestAssembly;
+using System;
+using TestFrameworkWeb.TestAssembly;
 
 namespace TestFrameworkCore.StepDefinations
 {
@@ -39,6 +41,7 @@ namespace TestFrameworkCore.StepDefinations
         public void WhenILoginAsToTheApplication(string role)
         {
             loginPage.Login(role);
+            Console.WriteLine("Login method completed");
         }
 
 
@@ -48,19 +51,20 @@ namespace TestFrameworkCore.StepDefinations
             appLandingPage.ValidateHeader();
         }
 
-        [When(@"i click on the Single pipeline project")]
-        public void WhenIClickOnTheSinglePipelineProject()
+ 
+
+        [When(@"I click on the CRM project")]
+        public void WhenIClickOnTheCRMProject()
         {
-            appLandingPage.GotoSinglePipeline();
+            appLandingPage.GotoManagerPartnerInteractions();
         }
+
 
         [Then(@"I should land on the Home page")]
         public void ThenIShouldLandOnTheHomePage()
         {
             homePage.ValidateTitle();
-            homePage.CreateNewProject();
+           // homePage.CreateNewProject();
         }
-
-
     }
 }

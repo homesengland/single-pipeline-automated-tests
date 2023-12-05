@@ -117,10 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="QA--Admin--Password" xml:space="preserve">
-    <value>FQQ8UUg7Ew0HDQclTx0iAwQxW0Q4KC5EAV1aAHIB</value>
+  <data name="CHNumber" xml:space="preserve">
+    <value>500</value>
   </data>
-  <data name="QA--Admin--Username" xml:space="preserve">
-    <value>SPL_Admin@homesengland.gov.uk</value>
+  <data name="City" xml:space="preserve">
+    <value>Coventry</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>United Kingdom</value>
+  </data>
+  <data name="County" xml:space="preserve">
+    <value>West Midlands</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>supercoffee@coventrycoffee.com</value>
+  </data>
+  <data name="HECentralGovOrgCode" xml:space="preserve">
+    <value>2112</value>
+  </data>
+  <data name="HECombAuthCode" xml:space="preserve">
+    <value>852</value>
+  </data>
+  <data name="KeyAccount" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="KeyAccountManager" xml:space="preserve">
+    <value>Alex</value>
+  </data>
+  <data name="LocalAuthCode" xml:space="preserve">
+    <value>987</value>
+  </data>
+  <data name="ParentPartner" xml:space="preserve">
+    <value>Microsoft Limited</value>
+  </data>
+  <data name="PartnerType" xml:space="preserve">
+    <value>Financial Institution</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>0123456789</value>
+  </data>
+  <data name="PrimaryOpRegion" xml:space="preserve">
+    <value>West Midlands</value>
+  </data>
+  <data name="SMEIndicator" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SocHPRegNum" xml:space="preserve">
+    <value>10003</value>
+  </data>
+  <data name="StreetThree" xml:space="preserve">
+    <value>Friargate Lane</value>
+  </data>
+  <data name="StreetTwo" xml:space="preserve">
+    <value>Friargate</value>
+  </data>
+  <data name="UltParent" xml:space="preserve">
+    <value>Microsoft Limited</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>coffee1.co.uk</value>
   </data>
 </root>

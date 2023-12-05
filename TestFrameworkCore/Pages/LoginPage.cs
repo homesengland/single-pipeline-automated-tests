@@ -6,6 +6,7 @@ using TechTalk.SpecFlow;
 using System.Configuration;
 using System;
 using TestFrameworkWeb.TestAssembly;
+using OpenQA.Selenium.Interactions;
 
 namespace TestFrameworkCore.Pages
 {
@@ -30,6 +31,7 @@ namespace TestFrameworkCore.Pages
         {
             driver = _driver;
             sContext = injectedContext;
+            //((IJavaScriptExecutor)driver).ExecuteScript("document.body.style.zoom = '90%'");
         }
 
         internal void ValidateHeader()
@@ -50,7 +52,10 @@ namespace TestFrameworkCore.Pages
             if (AppReader.GetConfigValue("Execution").ToLower().Equals("local"))
             {
                 StaticObjectRepo.UserName = Helpers.GetResourceUser(UNameKey);
-
+                
+                // StaticObjectRepo.Password = Helpers.dcryptXOR(Helpers.GetResourceUser(UPassKey), "SinglePipeline");
+                // removed line due to issues with character in password
+                // do not push this change
                 StaticObjectRepo.Password = Helpers.dcryptXOR(Helpers.GetResourceUser(UPassKey), "SinglePipeline");
             }
             else if (AppReader.GetConfigValue("Execution").ToLower().Equals("pipeline"))
@@ -58,10 +63,13 @@ namespace TestFrameworkCore.Pages
 
 
             EnterText(Username, StaticObjectRepo.UserName);
+            Console.WriteLine("Username entered: " + StaticObjectRepo.UserName);
             ClickOnElement(NextButton);
 
             WaitForPageToLoad();
             EnterText(Password, StaticObjectRepo.Password);
+
+            Console.WriteLine("Password entered is encrypted: " + Helpers.GetResourceUser(UPassKey));
             ClickOnElement(NextButton);
             WaitUntilElementClickable(DontShowCheckbox);
             ClickOnElement(NextButton);

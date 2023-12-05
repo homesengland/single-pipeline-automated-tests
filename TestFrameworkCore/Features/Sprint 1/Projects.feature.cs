@@ -75,12 +75,14 @@ namespace TestFrameworkCore.Features.Sprint1
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Test 1 Providing Mandatory Fields for the Prospect stage Project")]
+        [NUnit.Framework.CategoryAttribute("Regression")]
         public void Test1ProvidingMandatoryFieldsForTheProspectStageProject()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "Regression"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 1 Providing Mandatory Fields for the Prospect stage Project", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+#line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -90,22 +92,22 @@ namespace TestFrameworkCore.Features.Sprint1
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
     testRunner.Given("I navigate to the url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
     testRunner.Then("the login page should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
+#line 9
  testRunner.When("I login as \'Admin\' to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 10
     testRunner.Then("I should land on the AppLanding page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 11
     testRunner.When("i click on the Single pipeline project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 12
     testRunner.Then("I should land on the Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

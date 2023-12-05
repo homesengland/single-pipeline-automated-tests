@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\Sprint 1\AccessibilityTest.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\Sprint 1\Contacts - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4519 Customise Entities - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US4521 Data Migration Dry Run.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\US5037 Views (Task).feature.cs" />
@@ -36,7 +37,7 @@
     <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.5.0" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
     <PackageReference Include="gherkin" Version="26.0.3" />
-    <PackageReference Include="He.TestFramework.TestBase.Web" Version="1.0.54-alpha" />
+    <PackageReference Include="He.TestFramework.TestBase.Web" Version="1.0.55-alpha" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0">
@@ -48,7 +49,7 @@
     <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.150.1" />
     <PackageReference Include="Selenium.Support" Version="4.12.4" />
     <PackageReference Include="Selenium.WebDriver" Version="4.12.4" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="118.0.5993.7000" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="119.0.6045.10500" />
     <PackageReference Include="Selenium.WebDriver.MSEdgeDriver" Version="115.0.1901.200" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
@@ -57,8 +58,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Features\Sprint 1\Projects.feature.cs">
-      <DependentUpon>Projects.feature</DependentUpon>
+    <Compile Update="Features\Sprint 1\Interactions.feature.cs">
+      <DependentUpon>Interactions.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Sprint 1\Contacts.feature.cs">
+      <DependentUpon>Contacts.feature</DependentUpon>
     </Compile>
     <Compile Update="TestRun.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -75,7 +79,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\Sprint 1\Projects.feature">
+    <SpecFlowFeatureFiles Update="Features\Sprint 1\Interactions.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Sprint 1\Contacts.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

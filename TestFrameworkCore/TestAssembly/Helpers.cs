@@ -15,6 +15,8 @@ using System.Buffers.Text;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text;
 using AventStack.ExtentReports.Model;
+using Bogus;
+using System.Collections.Generic;
 
 namespace TestFrameworkWeb.TestAssembly
 {
@@ -160,6 +162,19 @@ namespace TestFrameworkWeb.TestAssembly
             return returnVal;
         }
 
+        public static string GetRandomPostcode()
+        {
+            string[] Postcodes = { "SK7 1DG", "L16 3GS", "KY8 3QR", "BD1 1NT", "EH48 3EX", "PO20 8SS", "PL17 7PH", "B49 5HZ", "BS36 2SS", "NG13 8YT", "EH19 3GQ", "TN37 7ST", "CH48 6DS", "CF64 5BQ", "TQ10 9FB", "PO14 3AD", "OX16 5UA", "G81 4SS", "BD20 8HL", "LL30 2JX", "G31 2LF", "PH1 2HU", "PH2 1TQ", "CV6 7JP", "BH22 8LB" };
+            List<string> PostcodeList = Postcodes.ToList();
+
+            var rand = new Faker();
+
+            string SelectedPostcode = rand.PickRandom<string>(PostcodeList);
+
+            return SelectedPostcode;
+
+        }
+
         public static string encryptXOR(string message, string key)
         {
 
@@ -195,7 +210,7 @@ namespace TestFrameworkWeb.TestAssembly
                 if (message == null || key == null)
                     return null;
                 char[] keys = key.ToCharArray();
-                char[] mesg = Encoding.ASCII.GetChars(Encoding.ASCII.GetBytes(message));
+                char[] mesg = Encoding.UTF8.GetChars(Convert.FromBase64String(message));
                 int ml = mesg.Length;
                 int kl = keys.Length;
                 char[] newmsg = new char[ml];

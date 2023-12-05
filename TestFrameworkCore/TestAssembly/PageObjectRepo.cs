@@ -20,7 +20,16 @@ namespace TestFrameworkCore.TestAssembly
         public static LoginPage loginPage;
 
         [ThreadStatic]
-        public static HomePage contactsPage;
+        public static ContactsPage contactsPage;
+
+        [ThreadStatic]
+        public static ContactsFormPage contactsFormPage;
+
+        [ThreadStatic]
+        public static PartnersPage partnersPage;
+
+        [ThreadStatic]
+        public static PartnersDetailsPage partnersDetailsPage;
 
         [ThreadStatic]
         public static LoginPage dashboardPage;
@@ -29,10 +38,22 @@ namespace TestFrameworkCore.TestAssembly
         public static BasePage basePage;
 
         [ThreadStatic]
-        public static SuperCalculatorPage superCalculatorPage;
+        public static Accessibility axe;
 
         [ThreadStatic]
-        public static Accessibility axe;
- 
+        public static PartnerFormPage partnerFormPage;
+
+
+        [ThreadStatic]
+        public static PartnersQuickFormPage partnersQuickFormPage;
+
+        [ThreadStatic]
+        public static InteractionsPage interactionsPage;
+
+        [ThreadStatic]
+        public static InteractionsFormPage interactionsFormPage;
+
+        [ThreadStatic]
+        public static CompaniesHouseSearchPage companiesHouseSearchPage;
     }
 }
