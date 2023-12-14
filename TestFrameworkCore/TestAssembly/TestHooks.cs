@@ -36,7 +36,7 @@ namespace TestFrameworkCore.TestAssembly
         }
 
         [BeforeScenario]
-        public void BeforeScenario()
+        public void BeforeScenario()    
         {
             try
             {

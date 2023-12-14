@@ -27,6 +27,8 @@ namespace TestFrameworkCore.Pages
         private IWebElement AutomaticSearch => driver.FindElement(By.CssSelector("input[aria-label='Use Automatic Search?']"));
         private IWebElement SearchField => driver.FindElement(By.CssSelector("input[appmagic-control='CompanyNametextbox']"));
         public IWebElement Header => driver.FindElement(By.CssSelector("h1 > div[aria-label='Chief Executive Forward Looking Report']"));
+        public IWebElement UserAccountButton => driver.FindElement(By.CssSelector("#mectrl_main_trigger"));
+        public IWebElement SignOutButton => driver.FindElement(By.CssSelector("#mectrl_body_signOut"));
         public By HeaderBy => By.CssSelector("h1 > div[aria-label='Chief Executive Forward Looking Report']");
 
         private readonly ScenarioContext sContext;
@@ -90,6 +92,13 @@ namespace TestFrameworkCore.Pages
             driver.SwitchTo().Frame("fullscreen-app-host");
             EnterText(SearchField, "Test");
 
+        }
+
+        internal void logout()
+        {
+            ClickOnElement(UserAccountButton);
+            ClickOnElement(SignOutButton);
+            loginPage = new LoginPage(driver, sContext); 
         }
     }
 }

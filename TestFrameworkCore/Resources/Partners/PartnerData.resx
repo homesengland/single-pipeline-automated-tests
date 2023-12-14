@@ -148,7 +148,7 @@
     <value>987</value>
   </data>
   <data name="ParentPartner" xml:space="preserve">
-    <value>Microsoft Limited</value>
+    <value>Test Partner</value>
   </data>
   <data name="PartnerType" xml:space="preserve">
     <value>Financial Institution</value>
@@ -172,7 +172,7 @@
     <value>Friargate</value>
   </data>
   <data name="UltParent" xml:space="preserve">
-    <value>Microsoft Limited</value>
+    <value>Test Partner</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>coffee1.co.uk</value>

@@ -84,7 +84,7 @@ namespace TestFrameworkCore.Features.Sprint1
     testRunner.Then("the login page should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 7
- testRunner.When("I login as \'Admin\' to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I login as \'Admin\' user to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
     testRunner.Then("I should land on the AppLanding page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -30,6 +30,16 @@ namespace TestFrameworkCore.StepDefinations
             PageObjectRepo.loginPage = new LoginPage(StaticObjectRepo.Driver, sContext);
         }
 
+        [When(@"I restart the browser and navigate to the url")]
+        public void WhenIRestartTheBrowserAndNavigateToTheUrl()
+        {
+            StaticObjectRepo.Driver.Close();
+
+            basePage.GoToURL();
+            PageObjectRepo.loginPage = new LoginPage(StaticObjectRepo.Driver, sContext);
+        }
+
+
         [Then(@"the login page should be displayed")]
         public void ThenTheLoginPageShouldBeDisplayed()
         {
@@ -37,11 +47,18 @@ namespace TestFrameworkCore.StepDefinations
         }
 
 
-        [When(@"I login as '([^']*)' to the application")]
-        public void WhenILoginAsToTheApplication(string role)
+        [When(@"I login as '([^']*)' user to the application")]
+        public void WhenILoginAsuserToTheApplication(string role)
         {
             loginPage.Login(role);
             Console.WriteLine("Login method completed");
+        }
+
+        [When(@"I log out of the application")]
+        public void WhenILogOutOfTheApplication()
+        {
+            homePage.logout();
+            loginPage.UseAnotherAcc();
         }
 
 

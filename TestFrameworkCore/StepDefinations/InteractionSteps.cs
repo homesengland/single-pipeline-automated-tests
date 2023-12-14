@@ -95,7 +95,13 @@ namespace TestFrameworkCore.StepDefinations
         [Then(@"I should see the recently created interaction")]
         public void ThenIShouldSeeTheRecentlyCreatedInteraction()
         {
-            interactionsPage.ValidateNewinteraction();
+            interactionsPage.ValidateNewinteraction(true);
+        }
+
+        [Then(@"I should not see the recently created interaction")]
+        public void ThenIShouldNotSeeTheRecentlyCreatedInteraction()
+        {
+            interactionsPage.ValidateNewinteraction(false);
         }
 
 

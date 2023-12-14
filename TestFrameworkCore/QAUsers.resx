@@ -123,4 +123,10 @@
   <data name="QA--Admin--Username" xml:space="preserve">
     <value>SPL_Admin@homesengland.gov.uk</value>
   </data>
+  <data name="QA--Business--Password" xml:space="preserve">
+    <value>FlcmBFQCEhUiV1ZMFyU2KjkmRTk=</value>
+  </data>
+  <data name="QA--Business--Username" xml:space="preserve">
+    <value>SPL_Admin2@homesengland.gov.uk</value>
+  </data>
 </root>

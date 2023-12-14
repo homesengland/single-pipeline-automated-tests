@@ -24,13 +24,13 @@ namespace TestFrameworkCore.Pages
         private IWebElement InteractionType => driver.FindElement(By.CssSelector("select[aria-label='Interaction Type']"));
         private IWebElement JobTitle => driver.FindElement(By.CssSelector("input[aria-label='Job Title']"));
         private IWebElement PartnerSelected => driver.FindElement(By.CssSelector("ul[title='Partner'] > li > div > div"));
-        private IWebElement PartnerField => driver.FindElement(By.CssSelector("input[aria-label='Look for Partner']"));
+        private IWebElement PartnerField => driver.FindElement(By.CssSelector("input[aria-label='Partner, Lookup']"));
         private IWebElement[] PartnerSearchList => driver.FindElements(By.CssSelector("ul[aria-label='Lookup results'] > li")).ToArray();
         private IWebElement NotesField => driver.FindElement(By.CssSelector("textarea[aria-label='Notes']"));
         private IWebElement SensetiveCheckbox => driver.FindElement(By.CssSelector("input[aria-label='Sensitive']"));
         private IWebElement RelatedToOpportunity => driver.FindElement(By.CssSelector("select[aria-label='Does this interaction relate to any Pipeline Opportunity']"));
         private IWebElement SaveClose => driver.FindElement(By.CssSelector("button[aria-label='Save & Close']"));
-        private IWebElement ContactField => driver.FindElement(By.CssSelector("input[aria-label='Look for Contact']"));
+        private IWebElement ContactField => driver.FindElement(By.CssSelector("input[aria-label='Contact, Lookup']"));
         private IWebElement ContactValue => driver.FindElement(By.CssSelector("ul[title='Contact']"));
         private IWebElement[] ContactList => driver.FindElements(By.CssSelector("ul[aria-label='Lookup recently used results'] > li")).ToArray();
         private IWebElement ContactSelected => driver.FindElement(By.CssSelector("ul[title='Contact'] > li > div"));
@@ -97,7 +97,7 @@ namespace TestFrameworkCore.Pages
             if (!forPartner)
             {
                 EnterText(PartnerField, "Test Partner");
-                WaitforFewSeconds(1);
+                //WaitforFewSeconds(1);
                 ClickElement(PartnerSearchList[0]);
                 sContext.Add("Partner", "Test Partner");
             }

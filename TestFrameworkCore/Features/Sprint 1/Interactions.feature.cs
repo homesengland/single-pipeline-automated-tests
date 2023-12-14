@@ -84,7 +84,7 @@ namespace TestFrameworkCore.Features.Sprint1
     testRunner.Then("the login page should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 7
- testRunner.When("I login as \'Admin\' to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I login as \'Admin\' user to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
     testRunner.Then("I should land on the AppLanding page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -271,6 +271,30 @@ namespace TestFrameworkCore.Features.Sprint1
 #line 53
     testRunner.Then("I should see the recently created interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 54
+    testRunner.When("I log out of the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 55
+    testRunner.Then("the login page should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 56
+ testRunner.When("I login as \'Business\' user to the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 57
+    testRunner.Then("I should land on the Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 58
+    testRunner.When("I click on the interactions link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 59
+    testRunner.Then("I should land on the interactions page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 60
+    testRunner.When("I filter interactions using the title of interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 61
+    testRunner.Then("I should not see the recently created interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -288,7 +312,7 @@ namespace TestFrameworkCore.Features.Sprint1
                     "Test3.4"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test 3.4 Validate mandatory fields for interactions", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 57
+#line 65
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -301,40 +325,40 @@ namespace TestFrameworkCore.Features.Sprint1
 #line 4
     this.FeatureBackground();
 #line hidden
-#line 58
+#line 66
     testRunner.When("I click on the interactions link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 59
+#line 67
     testRunner.Then("I should land on the interactions page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 60
+#line 68
     testRunner.When("I click on the Add Interaction link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 61
+#line 69
     testRunner.Then("I should land on the New Interaction form page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 62
+#line 70
     testRunner.Then("Validate that the Interaction Type field is mandatory and error message is correc" +
                         "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 63
+#line 71
     testRunner.Then("Validate that the RelateTo field is mandatory and error message is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 64
+#line 72
     testRunner.When("I fill the mandatory fields for interaction", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 65
+#line 73
     testRunner.Then("Validate that the Interaction Title field is mandatory and error message is corre" +
                         "ct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 66
+#line 74
     testRunner.Then("Validate that the Partner associated field is mandatory and error message is corr" +
                         "ect", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 67
+#line 75
     testRunner.Then("Validate that the Notes field is mandatory and error message is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 68
+#line 76
     testRunner.Then("Validate that the Contact field is mandatory and error message is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

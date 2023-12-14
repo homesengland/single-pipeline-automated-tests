@@ -72,6 +72,7 @@ namespace TestFrameworkWeb.TestAssembly
                 return false;
                 //StaticObjectRepo.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Convert.ToDouble(ConfigurationManager.AppSettings["IMPLICIT_WAIT"]));
             }
+            StaticObjectRepo.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Convert.ToDouble(ConfigurationManager.AppSettings["IMPLICIT_WAIT"]));
         }
 
         //StaticObjectRepo.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Convert.ToDouble(ConfigurationManager.AppSettings["IMPLICIT_WAIT"]));

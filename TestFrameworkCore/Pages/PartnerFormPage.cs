@@ -30,8 +30,8 @@ namespace TestFrameworkCore.Pages
         private IWebElement LocalAuthCode => driver.FindElement(By.CssSelector("input[aria-label='Local Authority Code']"));
         private IWebElement SocialHousingRegNumber => driver.FindElement(By.CssSelector("input[aria-label='Social Housing Provider Registration Number']"));
         private IWebElement PrimaryOpRegion => driver.FindElement(By.CssSelector("input[aria-label='Primary Operating Region']"));
-        private IWebElement ParentPartner => driver.FindElement(By.CssSelector("input[aria-label='Look for Parent Partner']"));
-        private IWebElement UltParent => driver.FindElement(By.CssSelector("input[aria-label='Look for Ultimate Parent']"));
+        private IWebElement ParentPartner => driver.FindElement(By.CssSelector("input[aria-label='Parent Partner, Lookup']"));
+        private IWebElement UltParent => driver.FindElement(By.CssSelector("input[aria-label='Ultimate Parent, Lookup']"));
         private IWebElement Email => driver.FindElement(By.CssSelector("input[aria-label='Email']"));
         private IWebElement Website => driver.FindElement(By.CssSelector("input[aria-label='Website']"));
         private IWebElement Phone => driver.FindElement(By.CssSelector("input[aria-label='Phone']"));

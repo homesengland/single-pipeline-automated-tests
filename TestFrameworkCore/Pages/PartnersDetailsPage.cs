@@ -23,7 +23,7 @@ namespace TestFrameworkCore.Pages
         private IWebElement AddExistingContactLink => driver.FindElement(By.CssSelector("button[aria-label='Add Existing Contact']"));
         private IWebElement NewContactLink => driver.FindElement(By.CssSelector("button[aria-label='New Contact. Add New Contact']"));
         private IWebElement NewInteractionLink => driver.FindElement(By.CssSelector("button[aria-label='Add Interaction. Add New Interaction']"));
-        private IWebElement RecordsLookUpField => driver.FindElement(By.CssSelector("input[aria-label^='Look for records']"));
+        private IWebElement RecordsLookUpField => driver.FindElement(By.CssSelector("input[aria-label^='Select record']"));
         private IWebElement AddButton => driver.FindElement(By.CssSelector("button[aria-label='Add']"));
         private IWebElement NewSectionTitle => driver.FindElement(By.CssSelector("h1[data-id='quickHeaderTitle']"));
         private IWebElement ExistingSectionTitle => driver.FindElement(By.CssSelector("h1[data-id='lookupDialogTitle']"));

@@ -20,6 +20,7 @@ namespace TestFrameworkCore.Pages
         private IWebElement Username => driver.FindElement(By.CssSelector("input[type='email']"));
         private IWebElement Password => driver.FindElement(By.CssSelector("input[type='password']"));
         private IWebElement NextButton => driver.FindElement(By.CssSelector("#idSIButton9"));
+        private IWebElement AnotherAccountLink => driver.FindElement(By.CssSelector(".row.tile #otherTile"));
         private By DontShowCheckbox => By.CssSelector("#KmsiCheckboxField");
         //private IWebElement RegistryLink => driver.FindElement(By.CssSelector("div[class='elsa-flex elsa-items-center'] > div:nth-child(2) stencil-route-link:nth-child(3) > a"));
         //private IWebElement HomesLink => driver.FindElement(By.CssSelector("div[class='elsa-flex elsa-items-center'] > div:nth-child(1) stencil-route-link:nth-child(1) > a"));
@@ -57,6 +58,7 @@ namespace TestFrameworkCore.Pages
                 // removed line due to issues with character in password
                 // do not push this change
                 StaticObjectRepo.Password = Helpers.dcryptXOR(Helpers.GetResourceUser(UPassKey), "SinglePipeline");
+
             }
             else if (AppReader.GetConfigValue("Execution").ToLower().Equals("pipeline"))
                 AzureSecret.GetCredentialsFromAzureSecrets(UNameKey, UPassKey).Wait();
@@ -71,11 +73,32 @@ namespace TestFrameworkCore.Pages
 
             Console.WriteLine("Password entered is encrypted: " + Helpers.GetResourceUser(UPassKey));
             ClickOnElement(NextButton);
-            WaitUntilElementClickable(DontShowCheckbox);
-            ClickOnElement(NextButton);
+            //if (UserType.ToLower().Equals("admin"))
+            //{ 
+            //    WaitUntilElementClickable(DontShowCheckbox);
+            //    ClickOnElement(NextButton);
+            //}
+
+            try
+            {
+                StaticObjectRepo.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+                WaitUntilElementClickable(DontShowCheckbox);
+                StaticObjectRepo.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Convert.ToDouble(ConfigurationManager.AppSettings["IMPLICIT_WAIT"]));
+
+                ClickOnElement(NextButton);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Do not show message box not diaplayed. \n\nError: " + e.Message);
+            }
+
             appLandingPage = new AppLandingPage(driver, sContext);
         }
 
-
+        internal void UseAnotherAcc()
+        {
+            ClickOnElement(AnotherAccountLink);
+            WaitforFewSeconds(3);
+        }
     }
 }

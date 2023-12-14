@@ -5,7 +5,7 @@ This feature file will contain all flows for creating a new partner
 Background: 
     Given I navigate to the url
     Then  the login page should be displayed
-	When  I login as 'Admin' to the application
+	When  I login as 'Admin' user to the application
     Then  I should land on the AppLanding page
     When  I click on the CRM project
     Then  I should land on the Home page
